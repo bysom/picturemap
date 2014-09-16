@@ -4,4 +4,4 @@ do
   echo FILE
 done
 #exiftool -b -ThumbnailImage ./pics/* -o ./pics/thumb/
-#exiftool -n -g -b -json ./pics/* 
+#exiftool -n -g -json ./pics/* 
