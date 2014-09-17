@@ -29,3 +29,6 @@ node_modules
 
 # Zeug
 bower_components
+3rd_party/*
+data/*
+tmp/*
