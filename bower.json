@@ -13,5 +13,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "leaflet.markercluster": "~0.4.0",
+    "Leaflet.label": "~0.2.1"
+  }
 }

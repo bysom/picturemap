@@ -5,3 +5,41 @@ body {
 html, body, #map {
 	height: 100%;
 }
+.leaflet-popup-content{
+	width: 170px;
+}
+
+.zoombox{
+	position: relative;
+}
+.zooming{
+	/*top: -100px;*/
+	left: 10px;
+	top: 10px;
+	color: gray;
+	font-size: 30px;
+	opacity: 0.5;
+	position: absolute;
+	border: 0;
+	text-decoration: none;
+}
+.zoombox > a:hover > span{
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+a:hover{
+	text-decoration: none;
+}
+a:active { 
+	text-decoration: none; 
+}
+a:link { text-decoration:none; }
+a:visited { text-decoration:none; }
+a:focus { text-decoration:none; }
+.modal-dialog {
+    margin: 10px auto;
+}
+.pic{
+	max-width: 100%;
+}

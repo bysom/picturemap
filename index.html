@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/leaflet.markercluster/dist/MarkerCluster.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/Leaflet.label/dist/leaflet.label.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	
@@ -12,7 +15,30 @@
 </head>
 <body>
 	<div id="map"></div>
+
+	<div class="modal fade bs-example-modal-lg">
+	 	<div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		      	<!-- <div class="modal-header">
+		        	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        		<h4 class="modal-title">Modal title</h4>
+		      	</div> -->
+		      	<div class="modal-body">
+		      		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        	<!-- <p>One fine body&hellip;</p> -->
+		        	<div id="picmodal"></div>
+		      	</div>
+		      	<!-- <div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        	<button type="button" class="btn btn-primary">Save changes</button>
+		      	</div> -->
+		    </div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script type="text/javascript" src="bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+	<script type="text/javascript" src="bower_components/Leaflet.label/dist/leaflet.label.js"></script>
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
