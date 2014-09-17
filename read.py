@@ -1,4 +1,8 @@
 #!/usr/bin/python
+
+# This file extracts EXIF-Data from the Pictures in ./pics and builds GeoJSON files from it.
+
+
 import os
 import json
 
@@ -43,6 +47,7 @@ os.system("exiftool -n -g -json ./pics/* > tmp/exif.json")
 print("Generiere daraus eine GeoJSON-Datei")
 generateGeoJSON()
 
+# Wechselt das Verzeichnis beim Durchlaufen
 print("Erzeuge Thumbnails...")
 scanfolder(pathpics)
 
