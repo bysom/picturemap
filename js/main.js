@@ -44,6 +44,37 @@ var overlays = {
 }
 
 L.control.layers(baseLayers, overlays).addTo(map);
+var sidebar = L.control.sidebar('sidebar', {
+    position: 'left'
+});
+
+var info = L.control({
+	"position": "topleft"
+});
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this._div.id = "info"
+    this._div.innerHTML = '<h4 onclick="info.update()">&lt;</h4>';
+    // $("#info").on("click",info.update)
+    return this._div;
+};
+
+info.update = function (props) {
+	if(this._div.innerHTML === '<h4 onclick="info.update()">&gt;</h4>')
+    	this._div.innerHTML = '<h4 onclick="info.update()">&lt;</h4>';
+    else
+    	this._div.innerHTML = '<h4 onclick="info.update()">&gt;</h4>';
+    sidebar.toggle();
+};
+
+
+info.addTo(map);
+
+
+
+map.addControl(sidebar);
+sidebar.toggle();
 
 
 
@@ -107,6 +138,13 @@ function getPopupContent(feature){
 	return popupContent
 }
 
+function updateFSidebar(path, img){
+	console.log("poff")
+	info.update()
+	loadImage(path,img)
+	$(".bs-example-modal-lg") .modal('toggle')
+}
+
 function onEachFeature(feature, layer) {
 	var popupContent = getPopupContent(feature)
 	
@@ -163,4 +201,21 @@ $.getJSON( "data/fotos.geojson", function( data ) {
 		}
 
 	}).addTo(markers);
+
+	for (var i = 0; i < data.features.length; i++) {
+		var element = "<div class='sidebarelement media'>"
+		element += "<a href='#' data-toggle=\"modal\" class='pull-left' data-target=\".bs-example-modal-lg\" onclick='updateFSidebar(\""+data.features[i].properties.File.Directory+"\",\""+data.features[i].properties.File.FileName+"\")'><img src='"+data.features[i].properties.File.Directory+"/thumb/"+data.features[i].properties.File.FileName+"' class=\"img-rounded\" alt='Bild'></a>"
+		element += "<div class='media-body'><dl>"
+		element += "<dt>Bild</dt>"
+	  	element += "<dd>"+data.features[i].properties.File.FileName+"</dd>"
+	  	element += "<dt>Zeit</dt>"
+	  	element += "<dd>"+data.features[i].properties.EXIF.DateTimeOriginal+"</dd>"
+	  	element += "<dt>Koordinaten</dt>"
+	  	element += "<dd>"+data.features[i].properties.EXIF.GPSLatitude+" "+data.features[i].properties.EXIF.GPSLatitudeRef+"<br>"+data.features[i].properties.EXIF.GPSLongitude+" "+data.features[i].properties.EXIF.GPSLongitudeRef+"</dd>"
+		element += "</dl></div>"
+		element += "</div>"
+		$("#sidebarfoo").append(element)
+	};
+
+
 });
