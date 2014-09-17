@@ -55,16 +55,16 @@ var info = L.control({
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
     this._div.id = "info"
-    this._div.innerHTML = '<h4 onclick="info.update()">&lt;</h4>';
+    this._div.innerHTML = '<span class="glyphicon glyphicon-chevron-left" onclick="info.update()"></span>';
     // $("#info").on("click",info.update)
     return this._div;
 };
 
 info.update = function (props) {
-	if(this._div.innerHTML === '<h4 onclick="info.update()">&gt;</h4>')
-    	this._div.innerHTML = '<h4 onclick="info.update()">&lt;</h4>';
+	if(this._div.innerHTML === '<span class="glyphicon glyphicon-chevron-right" onclick="info.update()"></span>')
+    	this._div.innerHTML = '<span class="glyphicon glyphicon-chevron-left" onclick="info.update()"></span>';
     else
-    	this._div.innerHTML = '<h4 onclick="info.update()">&gt;</h4>';
+    	this._div.innerHTML = '<span class="glyphicon glyphicon-chevron-right" onclick="info.update()"></span>';
     sidebar.toggle();
 };
 
