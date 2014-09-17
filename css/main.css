@@ -56,4 +56,11 @@ a:focus { text-decoration:none; }
     color: #777;
     cursor: pointer;
 }
+
+#sidebarfoo div dl{
+	margin-bottom: 0;
+}
+
+#sidebarfoo div a{
+	margin-right: 5px;
 }

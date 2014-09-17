@@ -4,7 +4,7 @@ picturemap
 See the positions and directrions of your Photographs.
 
 ##Installation
-First you'll need a (normal) webserver and bower.
+First you'll need a (normal) webserver, exiftool and bower.
 You can install bower via nodejs with
 ```sh
 sudo npm install -g bower

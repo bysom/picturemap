@@ -203,16 +203,16 @@ $.getJSON( "data/fotos.geojson", function( data ) {
 	}).addTo(markers);
 
 	for (var i = 0; i < data.features.length; i++) {
-		var element = "<div class='sidebarelement media'>"
+		var element = "<div class='list-group-item' href='#'>"
 		element += "<a href='#' data-toggle=\"modal\" class='pull-left' data-target=\".bs-example-modal-lg\" onclick='updateFSidebar(\""+data.features[i].properties.File.Directory+"\",\""+data.features[i].properties.File.FileName+"\")'><img src='"+data.features[i].properties.File.Directory+"/thumb/"+data.features[i].properties.File.FileName+"' class=\"img-rounded\" alt='Bild'></a>"
-		element += "<div class='media-body'><dl>"
+		element += "<dl>"
 		element += "<dt>Bild</dt>"
 	  	element += "<dd>"+data.features[i].properties.File.FileName+"</dd>"
 	  	element += "<dt>Zeit</dt>"
 	  	element += "<dd>"+data.features[i].properties.EXIF.DateTimeOriginal+"</dd>"
 	  	element += "<dt>Koordinaten</dt>"
 	  	element += "<dd>"+data.features[i].properties.EXIF.GPSLatitude+" "+data.features[i].properties.EXIF.GPSLatitudeRef+"<br>"+data.features[i].properties.EXIF.GPSLongitude+" "+data.features[i].properties.EXIF.GPSLongitudeRef+"</dd>"
-		element += "</dl></div>"
+		element += "</dl>"
 		element += "</div>"
 		$("#sidebarfoo").append(element)
 	};
