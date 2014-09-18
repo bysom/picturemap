@@ -10,7 +10,7 @@ You can install bower via nodejs/npm with
 sudo npm install -g bower
 ````
 
-Then clone this project and install dependencies.
+Then clone this project and install the dependencies.
 ```
 git clone https://github.com/bysom/picturemap.git
 cd picturemap
@@ -20,7 +20,7 @@ git clone https://github.com/jieter/Leaflet-semicircle.git
 git clone https://github.com/Turbo87/leaflet-sidebar.git
 cd ..
 ```
-Under ./pics should be your pictures. Change it.
+./pics must be the path to your pictures. Change it.
 
 ```
 rm pics
