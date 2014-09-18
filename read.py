@@ -42,7 +42,7 @@ def generateGeoJSON():
 
 
 print("Extrahiere EXIF-Daten")
-os.system("exiftool -n -g -json ./pics/* > tmp/exif.json")
+os.system("exiftool -n -r -g -json ./pics/* > tmp/exif.json")
 
 print("Generiere daraus eine GeoJSON-Datei")
 generateGeoJSON()
