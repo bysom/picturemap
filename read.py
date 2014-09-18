@@ -12,7 +12,7 @@ pathpics = os.path.abspath("./pics")
 
 def scanfolder(url):
     os.chdir(url)
-    dirs = os.listdir()
+    dirs = os.listdir(".")
     print(url)
     for adir in dirs:
         nurl = url + "/" + adir
@@ -51,7 +51,7 @@ generateGeoJSON()
 print("Erzeuge Thumbnails...")
 scanfolder(pathpics)
 
-print("Aufräumen...")
+print("Aufraeumen...")
 os.system("rm " + path + "/tmp/exif.json")
 print("Ende")
 
