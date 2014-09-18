@@ -28,9 +28,8 @@ def generateGeoJSON():
     geojsonmeta = {"type": "FeatureCollection"}
     geojson = []
     for dataset in data:
-        print (dataset["SourceFile"])
+        print ( "und " + dataset["SourceFile"])
         if "EXIF" in dataset:
-            print ("plop")
             feature = {'type': "Feature", "geometry": {"type": "Point", "coordinates": [dataset["EXIF"]["GPSLongitude"], dataset["EXIF"]["GPSLatitude"]]}, "properties": dataset}
             geojson.append(feature)
     geojsonmeta["features"] = geojson
@@ -41,10 +40,10 @@ def generateGeoJSON():
     geojson_data.close()
 
 
-print("Extrahiere EXIF-Daten")
+print("Extrahiere EXIF-Daten...")
 os.system("exiftool -n -r -g -json ./pics/* > tmp/exif.json")
 
-print("Generiere daraus eine GeoJSON-Datei")
+print("Generiere daraus eine GeoJSON-Datei mit Liebe ...")
 generateGeoJSON()
 
 # Wechselt das Verzeichnis beim Durchlaufen
